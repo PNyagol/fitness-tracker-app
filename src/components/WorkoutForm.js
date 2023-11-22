@@ -1,112 +1,33 @@
-import React, { useState } from 'react';
-import '../App.css'; // Import your CSS file
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function WorkoutForm() {
-  const [workoutDetails, setWorkoutDetails] = useState({
-    exercise: '',
-    duration: '',
-    date: '',
-    notes: '',
-  });
-
-  function handleInputChange(e) {
-    const { name, value } = e.target;
-    setWorkoutDetails({
-      ...workoutDetails,
-      [name]: value,
-    });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    fetch('http://localhost:3000/workouts', {  // waiting for db.json to be created 
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(workoutDetails),
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        
-        console.log('Workout details saved:', data);
-
-        setWorkoutDetails({
-          exercise: '',
-          duration: '',
-          date: '',
-          notes: '',
-        });
-      })
-      .catch(error => {
-        console.error('Error saving workout details:', error);
-      });
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="workout-form">
-      <div className="form-group">
-        <label>
-          Exercise:
-          <input
-            type="text"
-            name="exercise"
-            value={workoutDetails.exercise}
-            onChange={handleInputChange}
-            required
-            style={{ marginBottom: '10px' }}
-          />
-        </label>
-      </div>
+    <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Excersice Type</Form.Label>
+        <Form.Control type="text" placeholder="Enter the type of excersice" />
+      </Form.Group>
 
-      <div className="form-group">
-        <label>
-          Duration (minutes):
-          <input
-            type="number"
-            name="duration"
-            value={workoutDetails.duration}
-            onChange={handleInputChange}
-            required
-            style={{ marginBottom: '10px' }}
-          />
-        </label>
-      </div>
+      <Form.Group className="mb-3" controlId="formBasicDuration">
+        <Form.Label>Duration</Form.Label>
+        <Form.Control type="text" placeholder="Duration for the excersice" />
+      </Form.Group>
 
-      <div className="form-group">
-        <label>
-          Date:
-          <input
-            type="date"
-            name="date"
-            value={workoutDetails.date}
-            onChange={handleInputChange}
-            required
-            style={{ marginBottom: '10px' }}
-          />
-        </label>
-      </div>
+      <Form.Group className="mb-3" controlId="formBasicDate">
+        <Form.Label>Date</Form.Label>
+        <Form.Control type="date" placeholder="Enter the date" />
+      </Form.Group>
 
-      <div className="form-group">
-        <label>
-          Notes:
-          <textarea
-            name="notes"
-            value={workoutDetails.notes}
-            onChange={handleInputChange}
-            style={{ marginBottom: '10px' }}
-          />
-        </label>
-      </div>
+      <Form.Group className="mb-3" controlId="formBasicDuration">
+        <Form.Label>Notes</Form.Label>
+        <Form.Control type="textarea" placeholder="Enter notes about the excersice" />
+      </Form.Group>
 
-      <button type="submit" className="small-button">Submit</button>
-    </form>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   );
 }
 
