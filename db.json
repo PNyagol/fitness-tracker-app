@@ -1,90 +1,95 @@
 {
-    "workouts": [
-      {
-        "id": 1,
-        "exercise": "Running",
-        "duration": 30,
-        "date": "2023-01-01",
-        "notes": "Morning jog"
-      },
-      {
-        "id": 2,
-        "exercise": "Weightlifting",
-        "duration": 45,
-        "date": "2023-01-02",
-        "notes": "Upper body workout"
-      },
-      {
-        "id": 3,
-        "exercise": "Cycling",
-        "duration": 60,
-        "date": "2023-01-03",
-        "notes": "Afternoon ride"
-      },
-      {
-        "id": 4,
-        "exercise": "Yoga",
-        "duration": 40,
-        "date": "2023-01-04",
-        "notes": "Mindful stretching"
-      },
-      {
-        "id": 5,
-        "exercise": "Swimming",
-        "duration": 45,
-        "date": "2023-01-05",
-        "notes": "Freestyle laps"
-      },
-      {
-        "id": 6,
-        "exercise": "Hiking",
-        "duration": 90,
-        "date": "2023-01-06",
-        "notes": "Nature trail exploration"
-      },
-      {
-        "id": 7,
-        "exercise": "HIIT",
-        "duration": 30,
-        "date": "2023-01-07",
-        "notes": "High-intensity interval training"
-      },
-      {
-        "id": 8,
-        "exercise": "Pilates",
-        "duration": 50,
-        "date": "2023-01-08",
-        "notes": "Core strengthening"
-      },
-      {
-        "id": 9,
-        "exercise": "Rowing",
-        "duration": 40,
-        "date": "2023-01-09",
-        "notes": "Indoor rowing session"
-      },
-      {
-        "id": 10,
-        "exercise": "Boxing",
-        "duration": 45,
-        "date": "2023-01-10",
-        "notes": "Punching bag workout"
-      },
-      {
-        "id": 11,
-        "exercise": "CrossFit",
-        "duration": 60,
-        "date": "2023-01-11",
-        "notes": "Functional fitness"
-      },
-      {
-        "id": 12,
-        "exercise": "Dancing",
-        "duration": 40,
-        "date": "2023-01-12",
-        "notes": "Latin dance class"
-      },
-     
-    ]
-  }
-  
+  "workouts": [
+    {
+      "id": 1,
+      "exercise": "Running",
+      "duration": 30,
+      "date": "2023-01-01",
+      "notes": "Morning jog"
+    },
+    {
+      "id": 2,
+      "exercise": "Weightlifting",
+      "duration": 45,
+      "date": "2023-01-02",
+      "notes": "Upper body workout"
+    },
+    {
+      "id": 3,
+      "exercise": "Cycling",
+      "duration": 60,
+      "date": "2023-01-03",
+      "notes": "Afternoon ride"
+    },
+    {
+      "id": 4,
+      "exercise": "Yoga",
+      "duration": 40,
+      "date": "2023-01-04",
+      "notes": "Mindful stretching"
+    },
+    {
+      "id": 5,
+      "exercise": "Swimming",
+      "duration": 45,
+      "date": "2023-01-05",
+      "notes": "Freestyle laps"
+    },
+    {
+      "id": 6,
+      "exercise": "Hiking",
+      "duration": 90,
+      "date": "2023-01-06",
+      "notes": "Nature trail exploration"
+    },
+    {
+      "id": 7,
+      "exercise": "HIIT",
+      "duration": 30,
+      "date": "2023-01-07",
+      "notes": "High-intensity interval training"
+    },
+    {
+      "id": 8,
+      "exercise": "Pilates",
+      "duration": 50,
+      "date": "2023-01-08",
+      "notes": "Core strengthening"
+    },
+    {
+      "id": 9,
+      "exercise": "Rowing",
+      "duration": 40,
+      "date": "2023-01-09",
+      "notes": "Indoor rowing session"
+    },
+    {
+      "id": 10,
+      "exercise": "Boxing",
+      "duration": 45,
+      "date": "2023-01-10",
+      "notes": "Punching bag workout"
+    },
+    {
+      "id": 11,
+      "exercise": "CrossFit",
+      "duration": 60,
+      "date": "2023-01-11",
+      "notes": "Functional fitness"
+    },
+    {
+      "id": 12,
+      "exercise": "Dancing",
+      "duration": 40,
+      "date": "2023-01-12",
+      "notes": "Latin dance class"
+    },
+    {
+      "exercise": "running",
+      "duration": "30",
+      "date": "2013-12-30",
+      "notes": "yes yes",
+      "id": 13
+    }
+  ]
+}
