@@ -20,7 +20,7 @@ function WorkoutForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch('http://localhost:3000/workouts', {  // waiting for db.json to be created 
+    fetch('http://localhost:3001/workouts', {  // waiting for db.json to be created 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
