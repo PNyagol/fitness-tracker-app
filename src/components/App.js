@@ -7,10 +7,10 @@ function App() {
   const [workouts, setWorkouts] = useState([]);
 
   // What does this do?
-  const handleWorkoutSubmission = (workoutDetails) => {
-    setWorkouts((prevWorkouts) => [...prevWorkouts, workoutDetails]);
-    console.log("Workout details submitted:", workoutDetails);
-  };
+  // const handleWorkoutSubmission = (workoutDetails) => {
+  //   setWorkouts((prevWorkouts) => [...prevWorkouts, workoutDetails]);
+  //   console.log("Workout details submitted:", workoutDetails);
+  // };
 
   const handleEdit = (id) => {
     console.log("Edit workout with id:", id);
@@ -20,15 +20,25 @@ function App() {
     console.log("Delete workout with id:", id);
   };
 
-  useEffect(async () => {
-    let data = await fetch("http://localhost:3001/workouts").then((response) =>
-      response.json()
-    );
+  useEffect (() => {
+     const fetchWorkouts = async () => {
+      try {
+        let data = await fetch("http://localhost:3001/workouts").then((response) =>
+          response.json()
+        );
 
-    setWorkouts(data);
+        setWorkouts(data);
+        console.log(data); // Log fetched data
+      } catch (error) {
+        console.error("Error fetching workouts:", error);
+      }
+    };
 
-    console.log(workouts);
+    fetchWorkouts(); // Call the async function
+
+    // Added 'workouts' as a dependency for useEffect
   }, []);
+     
   return (
     <>
       <header>
