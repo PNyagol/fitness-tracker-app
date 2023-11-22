@@ -1,18 +1,20 @@
 import React from 'react';
+import WorkOutItem from './WorkOutItem';
 
-//Workout List Componenet
+// Workout List Component
 const WorkoutList = ({ workouts, onEdit, onDelete }) => {
-    return (
-      <div>
-        <h2>Workout List</h2>
-        <ul>
+  return (
+    <div>
+      <h2>Workout List</h2>
+      <ul>
         {workouts.map((workout) => (
-          <li key={workout.id}>
-            <strong>{workout.title}</strong>
-            <p>{workout.description}</p>
-            <button onClick={() => onEdit(workout.id)}>Edit</button>
-            <button onClick={() => onDelete(workout.id)}>Delete</button>
-          </li>
+          // Render WorkOutItem for each workout
+          <WorkOutItem
+            key={workout.id}
+            workout={workout}
+            onEdit={onEdit}
+            onDelete={onDelete}
+          />
         ))}
       </ul>
     </div>
