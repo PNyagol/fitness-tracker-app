@@ -61,3 +61,13 @@ This Application project is licensed by:
 - Peter Nyagol
 - Justine Onyango
 
+To make the work of the scrum master easier, please first update your repos with the latest changes from the origin/main branch 
+### 
+git pull origin main
+
+incase it fails, do git pull --force
+
+From their code your projects [PLEASE DONT CREATE MORWE BRANCHES] don the normal add("specificity: Only add what you are done with to avoid bugs"), commit, push, then make a pull request.
+
+Always pull the the latest changes before continuing.
+

@@ -44,6 +44,7 @@ function WorkoutForm() {
           notes: '',
         });
       })
+      
       .catch(error => {
         console.error('Error saving workout details:', error);
       });

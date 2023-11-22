@@ -3,11 +3,14 @@ import WorkoutItem from './WorkoutItem';
 
 // Workout List Component
 const WorkoutList = ({ workouts, onEdit, onDelete }) => {
+
+  console.log('WORKOULIST:', workouts)
   return (
     <div>
       <h2>Workout List</h2>
       <ul>
-        {workouts.map((workout) => (
+        {/* Added the .reverse method the get the latest object from the DB */}
+        {workouts?.reverse().map((workout) => (
           <WorkoutItem
             key={workout.id}
             workout={workout}

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import DeleteConfirmationModal from './DeleteConfirmationModal';
+import React, { useState } from "react";
+import DeleteConfirmationModal from "./DeleteConfirmationModal";
 
 function WorkoutItem({ workout, onEdit, onDelete }) {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -24,7 +24,15 @@ function WorkoutItem({ workout, onEdit, onDelete }) {
 
   return (
     <li>
-      {/* ... (your existing workout details rendering) */}
+      {/* Added the other props from  the workout object */}
+      <div>
+        <span>DATE: {workout.date}</span> <br />
+        <span>DURATION:{workout.duration}</span>
+        <br />
+        <span>EXERCISE:{workout.exercise}</span>
+        <br />
+        <span>NOTES: {workout.notes}</span>
+      </div>
       <button onClick={() => onEdit(workout.id)}>Edit</button>
       <button onClick={handleDeleteClick}>Delete</button>
 
@@ -39,4 +47,3 @@ function WorkoutItem({ workout, onEdit, onDelete }) {
 }
 
 export default WorkoutItem;
-
