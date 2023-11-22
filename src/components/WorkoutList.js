@@ -8,7 +8,6 @@ const WorkoutList = ({ workouts, onEdit, onDelete }) => {
       <h2>Workout List</h2>
       <ul>
         {workouts.map((workout) => (
-          // Render WorkOutItem for each workout
           <WorkoutItem
             key={workout.id}
             workout={workout}
