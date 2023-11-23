@@ -6,7 +6,6 @@ import WorkoutList from "./WorkoutList";
 function App() {
   const [workouts, setWorkouts] = useState([]);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [initial] = useState(true);
   const [isModalOpenned, setIsModalOpenned] = useState(false);
   const [workoutId, setWorkoutId] = useState(null);
 
