@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../App.css'; // Import your CSS file
+import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function WorkoutForm() {
   const [workoutDetails, setWorkoutDetails] = useState({
@@ -20,7 +21,7 @@ function WorkoutForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch('http://localhost:3001/workouts', {  // waiting for db.json to be created 
+    fetch('http://localhost:3001/workouts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
