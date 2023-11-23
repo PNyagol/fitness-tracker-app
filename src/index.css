@@ -30,3 +30,16 @@ textarea {
   width: 100px;
   height: 40px;
 }
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import '../App.css'; // Import your CSS file
+import React, { useState } from "react";
+import "../App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function WorkoutForm() {
+function WorkoutForm({ formSubmitted, setFormSubmitted }) {
   const [workoutDetails, setWorkoutDetails] = useState({
-    exercise: '',
-    duration: '',
-    date: '',
-    notes: '',
+    exercise: "",
+    duration: "",
+    date: "",
+    notes: "",
   });
 
   function handleInputChange(e) {
@@ -17,37 +18,27 @@ function WorkoutForm() {
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    fetch('http://localhost:3001/workouts', {  // waiting for db.json to be created 
-      method: 'POST',
+    let data = await fetch("http://localhost:3001/workouts", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(workoutDetails),
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        
-        console.log('Workout details saved:', data);
+    }).then((response) => {
+      return response.json();
+    });
 
-        setWorkoutDetails({
-          exercise: '',
-          duration: '',
-          date: '',
-          notes: '',
-        });
-      })
-      
-      .catch(error => {
-        console.error('Error saving workout details:', error);
-      });
+    formSubmitted === false && setFormSubmitted(!formSubmitted);
+
+    setWorkoutDetails({
+      exercise: "",
+      duration: "",
+      date: "",
+      notes: "",
+    });
   }
 
   return (
@@ -61,7 +52,7 @@ function WorkoutForm() {
             value={workoutDetails.exercise}
             onChange={handleInputChange}
             required
-            style={{ marginBottom: '10px' }}
+            style={{ marginBottom: "10px" }}
           />
         </label>
       </div>
@@ -75,7 +66,7 @@ function WorkoutForm() {
             value={workoutDetails.duration}
             onChange={handleInputChange}
             required
-            style={{ marginBottom: '10px' }}
+            style={{ marginBottom: "10px" }}
           />
         </label>
       </div>
@@ -89,7 +80,7 @@ function WorkoutForm() {
             value={workoutDetails.date}
             onChange={handleInputChange}
             required
-            style={{ marginBottom: '10px' }}
+            style={{ marginBottom: "10px" }}
           />
         </label>
       </div>
@@ -101,12 +92,14 @@ function WorkoutForm() {
             name="notes"
             value={workoutDetails.notes}
             onChange={handleInputChange}
-            style={{ marginBottom: '10px' }}
+            style={{ marginBottom: "10px" }}
           />
         </label>
       </div>
 
-      <button type="submit" className="small-button">Submit</button>
+      <button type="submit" className="small-button">
+        Submit
+      </button>
     </form>
   );
 }

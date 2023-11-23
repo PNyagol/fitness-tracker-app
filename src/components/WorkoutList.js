@@ -1,26 +1,37 @@
-import React from 'react';
-import WorkoutItem from './WorkoutItem';
+import React from "react";
+import WorkoutCard from "./WorkoutCard";
 
-// Workout List Component
-const WorkoutList = ({ workouts, onEdit, onDelete }) => {
+const WorkoutList = ({
+  workouts,
+  handleEdit,
+  handleDelete,
+  isModalOpenned,
+  setIsModalOpenned,
+  setWorkoutId
+}) => {
 
-  console.log('WORKOULIST:', workouts)
   return (
-    <div>
+    <div className="card-container">
       <h2>Workout List</h2>
       <ul>
-        {/* Added the .reverse method the get the latest object from the DB */}
-        {workouts?.reverse().map((workout) => (
-          <WorkoutItem
-            key={workout.id}
-            workout={workout}
-            onEdit={onEdit}
-            onDelete={onDelete}
-          />
-        ))}
+        {workouts &&
+          workouts
+            ?.reverse()
+            .map((workout, i) => (
+              <WorkoutCard
+                workout={workout}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+                setIsModalOpenned={setIsModalOpenned}
+                isModalOpenned={isModalOpenned}
+                setWorkoutId={setWorkoutId}
+                key={i}
+              />
+            ))}
       </ul>
     </div>
   );
 };
+
 
 export default WorkoutList;
