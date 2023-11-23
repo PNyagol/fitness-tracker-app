@@ -5,20 +5,15 @@ function WorkoutItem({ workout, onEdit, onDelete }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleDeleteClick = () => {
-    // Open the delete confirmation modal
     setModalOpen(true);
   };
 
   const handleCancelDelete = () => {
-    // Close the delete confirmation modal
     setModalOpen(false);
   };
 
   const handleConfirmDelete = () => {
-    // Perform the actual delete action
     onDelete(workout.id);
-
-    // Close the delete confirmation modal
     setModalOpen(false);
   };
 

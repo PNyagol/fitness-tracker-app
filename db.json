@@ -1,41 +1,6 @@
 {
   "workouts": [
     {
-      "id": 1,
-      "exercise": "Running",
-      "duration": 30,
-      "date": "2023-01-01",
-      "notes": "Morning jog"
-    },
-    {
-      "id": 2,
-      "exercise": "Weightlifting",
-      "duration": 45,
-      "date": "2023-01-02",
-      "notes": "Upper body workout"
-    },
-    {
-      "id": 3,
-      "exercise": "Cycling",
-      "duration": 60,
-      "date": "2023-01-03",
-      "notes": "Afternoon ride"
-    },
-    {
-      "id": 4,
-      "exercise": "Yoga",
-      "duration": 40,
-      "date": "2023-01-04",
-      "notes": "Mindful stretching"
-    },
-    {
-      "id": 5,
-      "exercise": "Swimming",
-      "duration": 45,
-      "date": "2023-01-05",
-      "notes": "Freestyle laps"
-    },
-    {
       "id": 6,
       "exercise": "Hiking",
       "duration": 90,
@@ -181,6 +146,34 @@
       "date": "2023-11-24",
       "notes": "I did squotes. It was nice",
       "id": 26
+    },
+    {
+      "exercise": "Rest",
+      "duration": "33",
+      "date": "2023-11-24",
+      "notes": "I did the mill",
+      "id": 27
+    },
+    {
+      "exercise": "sdfsfsdfsdfsdfsdfs",
+      "duration": "23232",
+      "date": "2023-10-31",
+      "notes": "323qweweadsd",
+      "id": 28
+    },
+    {
+      "exercise": "qweqweqwqweqw",
+      "duration": "1",
+      "date": "2023-10-31",
+      "notes": "weqeweqe",
+      "id": 29
+    },
+    {
+      "exercise": "asdf",
+      "duration": "12345",
+      "date": "2023-11-07",
+      "notes": "qwertrtyy",
+      "id": 30
     }
   ]
 }
