@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
 
+
 function App() {
 const [workouts, setWorkouts] = useState([]);
 // const handleWorkoutSubmission = (workoutDetails) => {
@@ -20,7 +21,7 @@ const handleEdit = (id) => {
     console.log("Delete workout with id:", id);
   };
 
-  useEffect(() => {
+useEffect(() => {
   const fetchData = async () => {
     try {
       let response = await fetch("http://localhost:3001/workouts");
@@ -37,9 +38,27 @@ const handleEdit = (id) => {
   };
 
   fetchData();
-}, []); // Empty dependency array to run this effect only once when the component mounts
+}, []);
 
+  useEffect (() => {
+     const fetchWorkouts = async () => {
+      try {
+        let data = await fetch("http://localhost:3001/workouts").then((response) =>
+          response.json()
+        );
 
+        setWorkouts(data);
+        console.log(data); // Log fetched data
+      } catch (error) {
+        console.error("Error fetching workouts:", error);
+      }
+    };
+
+    fetchWorkouts(); // Call the async function
+
+    // Added 'workouts' as a dependency for useEffect
+  }, []);
+     
   return (
     <Router>
       <div>
